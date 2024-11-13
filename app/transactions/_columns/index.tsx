@@ -19,44 +19,40 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "type",
     header: "Tipo",
-    cell: ({ row: { original: transaction } }) => {
-      return <TransactionTypeBadge transaction={transaction} />;
-    },
+    cell: ({ row: { original: transaction } }) => (
+      <TransactionTypeBadge transaction={transaction} />
+    ),
   },
   {
     accessorKey: "category",
     header: "Categoria",
-    cell: ({ row: { original: transaction } }) => {
-      return TRANSACTION_CATEGORY_LABELS[transaction.category];
-    },
+    cell: ({ row: { original: transaction } }) =>
+      TRANSACTION_CATEGORY_LABELS[transaction.category],
   },
   {
-    accessorKey: "payment",
+    accessorKey: "paymentMethod",
     header: "Método de Pagamento",
-    cell: ({ row: { original: transaction } }) => {
-      return TRANSACTION_PAYMENT_METHOD_LABELS[transaction.payment];
-    },
+    cell: ({ row: { original: transaction } }) =>
+      TRANSACTION_PAYMENT_METHOD_LABELS[transaction.paymentMethod],
   },
   {
     accessorKey: "date",
     header: "Data",
-    cell: ({ row: { original: transaction } }) => {
-      return new Date(transaction.date).toLocaleDateString("pt-BR", {
+    cell: ({ row: { original: transaction } }) =>
+      new Date(transaction.date).toLocaleDateString("pt-BR", {
         day: "2-digit",
         month: "long",
         year: "numeric",
-      });
-    },
+      }),
   },
   {
     accessorKey: "amount",
     header: "Valor",
-    cell: ({ row: { original: transaction } }) => {
-      return new Intl.NumberFormat("pt-BR", {
+    cell: ({ row: { original: transaction } }) =>
+      new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
-      }).format(Number(transaction.amount));
-    },
+      }).format(Number(transaction.amount)),
   },
   {
     accessorKey: "actions",
@@ -66,7 +62,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
         <div className="space-x-1">
           <EditTransactionButton transaction={transaction} />
           <Button variant="ghost" size="icon" className="text-muted-foreground">
-            <TrashIcon></TrashIcon>
+            <TrashIcon />
           </Button>
         </div>
       );

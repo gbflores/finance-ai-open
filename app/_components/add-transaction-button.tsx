@@ -15,7 +15,7 @@ const AddTransactionButton = () => {
         onClick={() => setDialogIsOpen(true)}
       >
         Adicionar transação
-        <ArrowDownUpIcon></ArrowDownUpIcon>
+        <ArrowDownUpIcon />
       </Button>
       <UpsertTransactionDialog
         isOpen={dialogIsOpen}

@@ -5,8 +5,9 @@ import { CircleIcon } from "lucide-react";
 interface TransactionTypeBadgeProps {
   transaction: Transaction;
 }
+
 const TransactionTypeBadge = ({ transaction }: TransactionTypeBadgeProps) => {
-  if (transaction.type == TransactionType.DEPOSIT) {
+  if (transaction.type === TransactionType.DEPOSIT) {
     return (
       <Badge className="bg-muted font-bold text-primary hover:bg-muted">
         <CircleIcon className="mr-2 fill-primary" size={10} />
@@ -14,16 +15,16 @@ const TransactionTypeBadge = ({ transaction }: TransactionTypeBadgeProps) => {
       </Badge>
     );
   }
-  if (transaction.type == TransactionType.EXPENSE) {
+  if (transaction.type === TransactionType.EXPENSE) {
     return (
-      <Badge className="hover:bg-danger,bg-opacity-10 bg-danger bg-opacity-10 font-bold text-danger">
+      <Badge className="font bold bg-danger bg-opacity-10 text-danger">
         <CircleIcon className="mr-2 fill-danger" size={10} />
         Despesa
       </Badge>
     );
   }
   return (
-    <Badge className="hover:bg-white,text-white bg-white bg-opacity-10 font-bold text-white">
+    <Badge className="font bold bg-white bg-opacity-10 text-white">
       <CircleIcon className="mr-2 fill-white" size={10} />
       Investimento
     </Badge>
