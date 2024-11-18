@@ -14,7 +14,7 @@ CREATE TABLE "Transaction" (
     "type" "TransactionType" NOT NULL,
     "amount" DECIMAL(10,2) NOT NULL,
     "category" "TransactionCategory" NOT NULL,
-    "payment" "TransactionPaymentMethod" NOT NULL,
+    "paymentMethod" "TransactionPaymentMethod" NOT NULL,
     "date" TIMESTAMP(3) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
