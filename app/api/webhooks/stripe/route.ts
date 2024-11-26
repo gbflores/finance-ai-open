@@ -20,7 +20,7 @@ export const POST = async (request: Request) => {
     process.env.STRIPE_WEBHOOK_SECRET,
   );
   switch (event.type) {
-    case "invoice.paid":
+    case "invoice.paid": {
       const { customer, subscription, subscription_details } =
         event.data.object;
       const clerkUserId = subscription_details?.metadata?.clerk_user_id;
@@ -37,6 +37,26 @@ export const POST = async (request: Request) => {
         },
       });
       break;
+    }
+    case "customer.subscription.deleted": {
+      const subscription = await stripe.subscriptions.retrieve(
+        event.data.object.id,
+      );
+      const clerkUserId = subscription.metadata.clerk_user_id;
+      if (!clerkUserId) {
+        return NextResponse.error();
+      }
+      await clerkClient().users.updateUser(clerkUserId, {
+        privateMetadata: {
+          stripeCustomerId: null,
+          stripeSubscriptionId: null,
+        },
+        publicMetadata: {
+          subscriptionPlan: null,
+        },
+      });
+      break;
+    }
   }
   return NextResponse.json({ received: true });
 };
