@@ -45,7 +45,7 @@ This project leverages a robust stack of modern technologies:
 
 - **[Next.js](https://nextjs.org/)** (14.2.16): React-based framework for fast and scalable web applications.
 - **[Tailwind CSS](https://tailwindcss.com/)** (3.4.1): Utility-first CSS framework for styling.
-- **[Radix UI](https://www.radix-ui.com/)**: Accessible and customizable UI components.
+- **[ShadCN](https://ui.shadcn.com/)**: Beautifully designed components that you can copy and paste into your apps.
 - **[React Hook Form](https://react-hook-form.com/)**: Simplified form handling.
 - **[Recharts](https://recharts.org/)**: Data visualization and charting library.
 - **[Lucide](https://lucide.dev/)**: Icon library for modern designs.
@@ -54,6 +54,7 @@ This project leverages a robust stack of modern technologies:
 
 - **[Prisma](https://www.prisma.io/)** (5.21.1): ORM for database queries and migrations.
 - **[OpenAI API](https://openai.com/api/)**: ChatGPT integration for AI-powered financial insights.
+- **[Neon](https://neon.tech/)** Ship faster with Postgres.
 - **[Stripe](https://stripe.com/)**: Payment gateway for subscription management.
 
 ### **Authentication**
@@ -147,7 +148,6 @@ This project leverages a robust stack of modern technologies:
 - **`npm run dev`**: Starts the development server.
 - **`npm run build`**: Builds the application for production.
 - **`npm run start`**: Starts the production server.
-- **`npm run lint`**: Lints the codebase.
 - **`npm run prepare`**: Prepares the project by generating Prisma client and setting up Husky hooks.
 
 ---
