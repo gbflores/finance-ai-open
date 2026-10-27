@@ -2,6 +2,8 @@
 
 **Finance AI** is a cutting-edge financial management platform designed to help users track and analyze their financial transactions effortlessly. Powered by artificial intelligence, this SaaS platform offers insightful dashboards, transaction tracking, and subscription plans to unlock advanced features like unlimited transactions and personalized AI financial reports.
 
+
+> Built as a study project to practice a full SaaS flow: auth, subscriptions, payments and AI features on top of Next.js.
 ---
 
 ## 🚀 Features
@@ -113,16 +115,15 @@ This project leverages a robust stack of modern technologies:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/finance-ai.git
-   cd finance-ai
+   git clone https://github.com/gbflores/finance-ai-open.git
+   cd finance-ai-open
    ```
 
-2. Install dependencies:
+2. Install dependencies (this also generates the Prisma client):
    ```bash
-   git clone https://github.com/yourusername/finance-ai.git
-   cd finance-ai
+   npm install
    ```
-3. Set up enviroment variables:
+3. Copy `.env.example` to `.env` and fill in the environment variables:
    ```bash
     NEXT_PUBLIC_CLERK_FRONTEND_API=your_clerk_frontend_api
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_api
@@ -136,8 +137,9 @@ This project leverages a robust stack of modern technologies:
     DATABASE_URL=your_database_url
     APP_URL=the_app_url_for_deploy
    ```
-4. Run the dev server:
+4. Apply the database schema and run the dev server:
    ```bash
+   npx prisma migrate deploy
    npm run dev
    ```
 
@@ -155,8 +157,12 @@ This project leverages a robust stack of modern technologies:
 ## 🌟 Future Enhancements
 
 - Add expense forecasting based on historical data.
-- Improove a mobile-first design for seamless usability.
+- Improve the mobile-first design for seamless usability.
 - Enable sharing financial reports with third parties.
 - Support for additional currencies and localization.
 
 ---
+
+## License
+
+[MIT](LICENSE) © Guilherme Flores
